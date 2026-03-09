@@ -1,0 +1,13 @@
+baseURL = 'https://openclawgotchi.github.io/docs/'
+languageCode = 'ru-ru'
+title = 'OpenClawGotchi Docs'
+theme = 'simple'
+
+[params]
+  description = "Документация OpenClawGotchi - AI бота с душой"
+  author = "OpenClawGotchi"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
