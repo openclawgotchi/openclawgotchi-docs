@@ -30,45 +30,26 @@
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        .content h1, .content h2, .content h3 {
-            margin-top: 30px;
+        .content h1 { margin-bottom: 20px; color: #667eea; }
+        .page-list { list-style: none; }
+        .page-list li {
             margin-bottom: 15px;
-            color: #667eea;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
         }
-        .content p { margin-bottom: 15px; }
-        .content code {
-            background: #f4f4f4;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: 'Monaco', 'Menlo', monospace;
-        }
-        .content pre {
-            background: #2d2d2d;
-            color: #f8f8f2;
-            padding: 20px;
-            border-radius: 5px;
-            overflow-x: auto;
-            margin-bottom: 20px;
-        }
-        .content pre code {
-            background: transparent;
-            padding: 0;
-        }
-        .content a {
+        .page-list a {
             color: #667eea;
             text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 500;
         }
-        .content a:hover {
+        .page-list a:hover {
             text-decoration: underline;
         }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: #667eea;
-            text-decoration: none;
-        }
-        .back-link:hover {
-            text-decoration: underline;
+        .page-list .date {
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 5px;
         }
     </style>
 </head>
@@ -79,9 +60,17 @@
             <p>{{ .Site.Params.description }}</p>
         </header>
         <div class="content">
-            <a href="/" class="back-link">← Назад на главную</a>
             <h1>{{ .Title }}</h1>
-            {{ .Content }}
+            <ul class="page-list">
+                {{ range .Pages }}
+                <li>
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    {{ if .Date }}
+                    <div class="date">{{ .Date.Format "02.01.2006" }}</div>
+                    {{ end }}
+                </li>
+                {{ end }}
+            </ul>
         </div>
     </div>
 </body>
