@@ -1,10 +1,9 @@
-baseURL = 'https://openclawgotchi.github.io/docs/'
-languageCode = 'ru-ru'
-title = 'OpenClawGotchi Docs'
-theme = 'simple'
+baseURL = 'https://openclawgotchi.github.io/openclawgotchi/'
+languageCode = 'en-us'
+title = 'OpenClawGotchi Documentation'
 
 [params]
-  description = "Документация OpenClawGotchi - AI бота с душой"
+  description = "Autonomous bot assistant for Raspberry Pi with E-Ink display"
   author = "OpenClawGotchi"
 
 [markup]
